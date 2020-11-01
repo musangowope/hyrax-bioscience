@@ -36,7 +36,10 @@ const SimpleModal = ({
       transitionDuration={transitionDuration}
     >
       <S.ModalOverlay className="simple-modal__overlay">
-        <S.ModalContent ref={modalRef} className="simple-modal__overlay__content">
+        <S.ModalContent
+          ref={modalRef}
+          className="simple-modal__overlay__content"
+        >
           {typeof childRenderer === "function"
             ? childRenderer(closeAction)
             : childRenderer}
@@ -77,8 +80,7 @@ S.Modal = styled.div`
 `;
 
 S.ModalOverlay = styled.div`
-  background-color: ${(props) =>
-    transparentize(0.5, props.theme.colors.baseColor)};
+  background-color: ${(props) => transparentize(0.5, "#605d5b")};
   width: 100%;
   height: 100%;
   position: relative;
@@ -86,7 +88,7 @@ S.ModalOverlay = styled.div`
 `;
 
 S.ModalContent = styled.div`
-  background: ${(props) => props.theme.colors.white};
+  background-color: white;
   max-width: ${(props) => props.theme.breakpoints.md};
   overflow: hidden;
   width: 500px;
